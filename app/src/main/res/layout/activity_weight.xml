@@ -23,22 +23,22 @@
             android:weightSum="5"
             >
 
-            <EditText
-                android:id="@+id/send_editText"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.874"
-                app:layout_constraintStart_toStartOf="@+id/Button01"
-                tools:layout_editor_absoluteY="608dp" />
+            <!--            <EditText-->
+            <!--                android:id="@+id/send_editText"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_weight="4"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.874"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/Button01"-->
+            <!--                tools:layout_editor_absoluteY="608dp" />-->
 
             <Button
                 android:id="@+id/send_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Send"
+                android:text="START"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="317dp" />
 
@@ -54,12 +54,32 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="보낸메세지: ">
+                android:text="기준 무게: 100ml">
+            </TextView>
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:id="@+id/send_textView"-->
+            <!--                android:text="">-->
+            <!--            </TextView>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무게: ">
             </TextView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/send_textView"
+                android:id="@+id/read_textView"
                 android:text="">
             </TextView>
         </LinearLayout>
@@ -74,25 +94,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="보낸메세지: ">
+                android:text="기준 시간: 20초">
             </TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/read_textView"
-                android:text="">
-            </TextView>
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:id="@+id/send_textView"-->
+            <!--                android:text="">-->
+            <!--            </TextView>-->
         </LinearLayout>
 
-<!--        <TextView-->
-<!--            android:id="@+id/chatTV"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_weight="9.5"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent" />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/chatTV"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:layout_weight="9.5"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.0"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
