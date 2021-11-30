@@ -27,7 +27,7 @@ public class Step1Activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Step1Activity.this, MenuActivity.class);
+                Intent intent = new Intent(Step1Activity.this, WeightActivity.class);
 
                 startActivity(intent);
 
