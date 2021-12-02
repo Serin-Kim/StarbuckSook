@@ -26,7 +26,6 @@
         <activity android:name=".Step4Activity"></activity>
         <activity android:name=".WeightActivity"></activity>
 
-
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
