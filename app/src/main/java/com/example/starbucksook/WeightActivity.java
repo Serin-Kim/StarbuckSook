@@ -1,5 +1,7 @@
 package com.example.starbucksook;
 
+import static java.lang.Integer.parseInt;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
@@ -44,8 +46,8 @@ public class WeightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
         send_button = findViewById(R.id.send_button);
-        send_editText = findViewById(R.id.send_editText);
-        send_textView = findViewById(R.id.send_textView);
+//        send_editText = findViewById(R.id.send_editText);
+//        send_textView = findViewById(R.id.send_textView);
         read_textView = findViewById(R.id.read_textView);
 
 
