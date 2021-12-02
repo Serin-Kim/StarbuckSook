@@ -1,5 +1,7 @@
 package com.example.starbucksook;
 
+import static java.lang.Integer.parseInt;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
