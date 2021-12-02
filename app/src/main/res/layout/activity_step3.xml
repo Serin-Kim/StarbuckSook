@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Step3Activity">
+
+    <TextView
+        android:id="@+id/step3_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginTop="130dp"
+        android:text="Step 3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+
+    <TextView
+        android:id="@+id/step3_time"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_brown"
+        android:text="원두 담기"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step3_textview" />
+
+    <TextView
+        android:id="@+id/step3_info"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_beige"
+        android:textSize="16sp"
+        android:text="분쇄된 원두 커피를 드리퍼 내부에 담아줍니다."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step3_time" />
+
+    <TextView
+        android:id="@+id/step3_weight"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/teal_200"
+        android:textSize="16sp"
+        android:text="원두 무게 : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step3_info" />
+
+    <Button
+        android:id="@+id/step3_btn"
+        android:layout_width="180dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/green"
+        android:text="Next"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step3_weight" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

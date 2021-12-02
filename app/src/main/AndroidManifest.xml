@@ -21,8 +21,10 @@
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".InfoActivity"></activity>
         <activity android:name=".Step1Activity"></activity>
+        <activity android:name=".Step2Activity"></activity>
+        <activity android:name=".Step3Activity"></activity>
+        <activity android:name=".Step4Activity"></activity>
         <activity android:name=".WeightActivity"></activity>
-
 
     </application>
 

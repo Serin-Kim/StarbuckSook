@@ -8,26 +8,26 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Step1Activity extends AppCompatActivity {
+public class Step2Activity extends AppCompatActivity {
 
-    TextView step1_weight;
+    TextView step2_weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step1);
+        setContentView(R.layout.activity_step2);
 
 
-        /* step1_weight = findViewById(R.id.step1_weight);
-        step1_weight.setText("Set Text test");   */      // TODO: 여기에 무게 측정 값 넣으면 된다.
+        step2_weight = findViewById(R.id.step2_weight);
+        step2_weight.setText("예열된 드립 서버의 물을 비웁니다. 현재 무게: ");         // TODO: 여기에 무게 측정 값 넣으면 된다.
 
 
 
-        Button btn = (Button)findViewById(R.id.step1_btn);
+        Button btn = (Button)findViewById(R.id.step2_btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Step1Activity.this, Step2Activity.class);
+                Intent intent = new Intent(Step2Activity.this, Step3Activity.class);
 
                 startActivity(intent);
 
