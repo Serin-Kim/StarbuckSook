@@ -13,4 +13,5 @@
 <!--    <color name="background">#F3F5FA</color>-->
     <color name="background">#F5F4F8</color>
     <color name="stepTitle">#353A3E</color>
+    <color name="lightgreen">#E9F0E3</color>
 </resources>
