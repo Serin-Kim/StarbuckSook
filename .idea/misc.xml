@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ingredient_coffee.xml" value="0.225" />
+        <entry key="app/src/main/res/drawable/ingredient_water.xml" value="0.246875" />
         <entry key="app/src/main/res/drawable/round_beige.xml" value="0.32564102564102565" />
         <entry key="app/src/main/res/drawable/round_brown.xml" value="0.3271794871794872" />
+        <entry key="app/src/main/res/drawable/round_white.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/activity_info.xml" value="0.1707676891203126" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.2401534505481671" />

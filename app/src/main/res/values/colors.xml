@@ -10,4 +10,7 @@
     <color name="beige">#F7E8D0</color>
     <color name="brown">#E4D9D0</color>
     <color name="green">#036635</color>
+<!--    <color name="background">#F3F5FA</color>-->
+    <color name="background">#F5F4F8</color>
+    <color name="stepTitle">#353A3E</color>
 </resources>
