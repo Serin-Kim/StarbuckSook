@@ -4,45 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".Step2Activity">
+
 
     <TextView
         android:id="@+id/step2_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/font_medium"
+        android:textColor="@color/stepTitle"
         android:textSize="24sp"
-        android:layout_marginTop="110dp"
-        android:text="Step 2: 드립필터 린싱"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/font_medium"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="24sp"-->
+<!--        android:layout_marginTop="110dp"-->
+<!--        android:textColor="@color/stepTitle"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.068"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:fontFamily="@font/font_medium"/>-->
+
+
+    <TextView
+        android:id="@+id/step_coffee"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_white"
+        android:drawableLeft="@drawable/ingredient_coffee"
+        android:drawablePadding="30dp"
+        android:elevation="5dp"
+        android:fontFamily="@font/font_light"
+        android:padding="20dp"
+        android:text="30"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step2_textview" />
+
+    <TextView
+        android:id="@+id/step_water"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/round_white"
+        android:textSize="30sp"
+        android:text="30"
+        app:layout_constraintTop_toBottomOf="@+id/step2_textview"
+        app:layout_constraintLeft_toRightOf="@+id/step_coffee"
+        android:padding="20dp"
+        android:elevation = "5dp"
+        android:fontFamily="@font/font_light"
+        android:drawableLeft="@drawable/ingredient_water"
+        android:drawablePadding="25dp"
+        />
 
 
     <TextView
         android:id="@+id/step2_info"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="335dp"
+        android:layout_height="120dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_beige"
+        android:background="@drawable/round_white"
         android:textSize="16sp"
-        android:text="드리퍼에 드립필터(여과지)를 씌우고 뜨거운 물로 필터를 적셔줍니다. 이 과정은 여과지의 종이 냄새를 없애고 드립서버를 예열시킵니다."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step2_textview"
+        app:layout_constraintTop_toBottomOf="@+id/step_water"
         android:padding="20dp"
         android:elevation = "5dp"
         android:fontFamily="@font/font_light"/>
-
     <TextView
-        android:id="@+id/step2_weight"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/step2_info2"
+        android:layout_width="335dp"
+        android:layout_height="120dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_beige"
+        android:background="@drawable/round_white"
         android:textSize="16sp"
-        android:text="예열된 드립 서버의 물을 비웁니다."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step2_info"
@@ -50,55 +105,144 @@
         android:elevation = "5dp"
         android:fontFamily="@font/font_light"/>
 
-
+    <TextView
+        android:id="@+id/step2_weight"
+        android:layout_width="335dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step2_info2"
+        android:padding="20dp"
+        android:elevation = "5dp"
+        android:fontFamily="@font/font_light"/>
 
     <Button
         android:id="@+id/step2_btn"
+        android:visibility="gone"
         android:layout_width="180dip"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/green"
-        android:text="Next"
-        android:layout_marginTop="50dp"
+        android:text="결과보기"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step2_weight"
+        app:layout_constraintTop_toBottomOf="@+id/step2_info2"
         android:fontFamily="@font/font_medium"/>
 
-    <TextView
-        android:id="@+id/check1"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step2_btn"
-        android:textSize="17dp" />
-    <TextView
-        android:id="@+id/check2"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check1"
-        android:textSize="17dp" />
-    <TextView
-        android:id="@+id/check3"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check2"
-        android:textSize="17dp" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+    <!--    세린 기존 코드 (혹시 몰라서 백업)-->
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Step2Activity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="24sp"-->
+<!--        android:layout_marginTop="110dp"-->
+<!--        android:text="Step 2: 드립필터 린싱"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:fontFamily="@font/font_medium"/>-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_info"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_beige"-->
+<!--        android:textSize="16sp"-->
+<!--        android:text="드리퍼에 드립필터(여과지)를 씌우고 뜨거운 물로 필터를 적셔줍니다. 이 과정은 여과지의 종이 냄새를 없애고 드립서버를 예열시킵니다."-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_textview"-->
+<!--        android:padding="20dp"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:fontFamily="@font/font_light"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_weight"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_beige"-->
+<!--        android:textSize="16sp"-->
+<!--        android:text="예열된 드립 서버의 물을 비웁니다."-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_info"-->
+<!--        android:padding="20dp"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:fontFamily="@font/font_light"/>-->
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/step2_btn"-->
+<!--        android:layout_width="180dip"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:text="Next"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_weight"-->
+<!--        android:fontFamily="@font/font_medium"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/check1"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="email"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_btn"-->
+<!--        android:textSize="17dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/check2"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="email"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/check1"-->
+<!--        android:textSize="17dp" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/check3"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="email"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/check2"-->
+<!--        android:textSize="17dp" />-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
