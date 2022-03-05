@@ -19,21 +19,9 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String idtext;
-//                String pwtext;
-//
-//                idtext=edit_id.getText().toString();
-//                pwtext=edit_pw.getText().toString();
-
-                //objTV.setText(idtext+"님 \n Book N Study에 오신 것을 환영합니다!");
 
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
 
-//                Bundle extras = new Bundle();
-//                extras.putString("id", idtext);
-//                extras.putString("pw", pwtext);
-
-//                intent.putExtras(extras);
                 startActivity(intent);
 
             }

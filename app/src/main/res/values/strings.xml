@@ -17,9 +17,9 @@
         <item>Brewed Coffee</item>
         <item>Caramel Macchiato</item>
         <item>Vanilla Latte</item>
-        <item>Cat</item>
-        <item>Cow</item>
-        <item>Deer</item>
+        <item>Americano</item>
+        <item>Espresso</item>
+        <item>Lemon Ade</item>
         <item>Dog</item>
         <item>Eagle</item>
         <item>Elephant</item>
@@ -29,7 +29,7 @@
     </string-array>
 
     <string-array name="description">
-        <item>This is random description</item>
+        <item>준비물: 드립 서버, 드리퍼, 드립포트, 여과지, 물, 원두\n진행단계: 세팅하기-린싱-원두담기-뜸들이기-푸어링</item>
         <item>This is random description</item>
         <item>This is random description</item>
         <item>This is random description</item>

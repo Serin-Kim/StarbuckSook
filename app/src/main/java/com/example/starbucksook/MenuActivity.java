@@ -11,8 +11,8 @@ public class MenuActivity extends AppCompatActivity {
         RecyclerView recyclerView;
 
         String s1[], s2[];
-//        int images[] = {R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3};
-        int images[] = {R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.black_cat, R.drawable.cow, R.drawable.deer, R.drawable.dog, R.drawable.eagle, R.drawable.elephant,  R.drawable.fish_in_glass, R.drawable.hunter, R.drawable.lion};
+        int images[] = {R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3};
+//        int images[] = {R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.black_cat, R.drawable.cow, R.drawable.deer, R.drawable.dog, R.drawable.eagle, R.drawable.elephant,  R.drawable.fish_in_glass, R.drawable.hunter, R.drawable.lion};
 
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

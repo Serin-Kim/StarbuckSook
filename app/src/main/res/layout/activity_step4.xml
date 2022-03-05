@@ -13,50 +13,73 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:layout_marginTop="130dp"
-        android:text="Step 4"
+        android:text="Step 4: 뜸들이기"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        android:fontFamily="@font/font_medium"/>
+
+
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step4_btn"
+        />
 
 
     <TextView
-        android:id="@+id/step4_time"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:textSize="20sp"
+        android:id="@+id/countdown_text_step4"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:textSize="18dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_brown"
-        android:text="뜸들이기"
+        android:text="남은 시간 : "
         android:gravity="center"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step4_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/step4_textview"
+        android:elevation = "5dp"
+        android:fontFamily="@font/font_medium"/>
+
+
 
     <TextView
         android:id="@+id/step4_info"
-        android:layout_width="200dp"
-        android:layout_height="130dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_beige"
         android:textSize="16sp"
         android:text="물 15ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step4_time" />
+        app:layout_constraintTop_toBottomOf="@+id/countdown_text_step4"
+        android:padding="20dp"
+        android:elevation = "5dp"
+        android:fontFamily="@font/font_light"/>
 
     <TextView
         android:id="@+id/step4_weight"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/teal_200"
+        android:background="@drawable/round_beige"
         android:textSize="16sp"
         android:text="물을 다 부으시면 40초 기다려주세요."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step4_info" />
+        app:layout_constraintTop_toBottomOf="@+id/step4_info"
+        android:padding="20dp"
+        android:elevation = "5dp"
+        android:fontFamily="@font/font_light"/>
 
     <Button
         android:id="@+id/step4_btn"
@@ -68,6 +91,7 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step4_weight" />
+        app:layout_constraintTop_toBottomOf="@+id/step4_weight"
+        android:fontFamily="@font/font_medium"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

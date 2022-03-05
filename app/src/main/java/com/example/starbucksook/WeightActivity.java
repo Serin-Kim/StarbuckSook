@@ -45,19 +45,22 @@ public class WeightActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
-        send_button = findViewById(R.id.send_button);
+//        send_button = findViewById(R.id.send_button);
 //        send_editText = findViewById(R.id.send_editText);
 //        send_textView = findViewById(R.id.send_textView);
         read_textView = findViewById(R.id.read_textView);
 
+        Connect connect = new Connect();
+        connect.execute(CONNECT_MSG);
 
-        send_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Connect connect = new Connect();
-                connect.execute(CONNECT_MSG);
-            }
-        });
+
+//        send_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Connect connect = new Connect();
+//                connect.execute(CONNECT_MSG);
+//            }
+//        });
     }
 
     private class Connect extends AsyncTask< String , String,Void > {
@@ -102,8 +105,8 @@ public class WeightActivity extends AppCompatActivity {
 
         @Override
         protected void onProgressUpdate(String... params){
-            send_textView.setText(""); // Clear the chat box
-            send_textView.append("보낸 메세지: " + output_message );
+//            send_textView.setText(""); // Clear the chat box
+//            send_textView.append("보낸 메세지: " + output_message );
             read_textView.setText(""); // Clear the chat box
             read_textView.append("받은 메세지: " + params[0]);
         }
