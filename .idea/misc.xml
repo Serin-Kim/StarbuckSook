@@ -12,9 +12,11 @@
         <entry key="app/src/main/res/drawable/round_lightgreen.xml" value="0.34479166666666666" />
         <entry key="app/src/main/res/drawable/round_white.xml" value="0.246875" />
         <entry key="app/src/main/res/layout/activity_info.xml" value="0.1707676891203126" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.21515577885292442" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.2401534505481671" />
         <entry key="app/src/main/res/layout/activity_report.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.18190714209930253" />
         <entry key="app/src/main/res/layout/activity_step1.xml" value="0.2743314403647096" />
         <entry key="app/src/main/res/layout/activity_step2.xml" value="0.2507260563417474" />
         <entry key="app/src/main/res/layout/activity_step3.xml" value="0.375" />
