@@ -136,7 +136,7 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 20;
                 step2_flag = 0;
                 step2_textview.setText("Step 2: 뜸들이기");
-                step_coffee.setText("20");
+                step_coffee.setText("0");
                 step_coffee.setText("15");
                 step2_info.setText("물 15ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다." +
                         "이 작업은 가루 전체에 물이 고르게 퍼지며 추출이 원활하게 합니다. " +
