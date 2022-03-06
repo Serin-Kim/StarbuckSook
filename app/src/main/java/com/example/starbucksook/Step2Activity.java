@@ -21,6 +21,8 @@ public class Step2Activity extends AppCompatActivity {
     TextView step2_textview;
     TextView step2_info2;
     TextView step2_weight;
+    TextView step_coffee;
+    TextView step_water;
     public Socket client;
     public DataOutputStream dataOutput;
     public DataInputStream dataInput;
@@ -47,6 +49,8 @@ public class Step2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_step2);
         step2_textview = findViewById(R.id.step2_textview);
         step2_textview.setText("Step 1: 원두 담기");
+        step_coffee = findViewById(R.id.step_coffee);
+        step_water = findViewById(R.id.step_water);
         step2_info = findViewById(R.id.step2_info);
         step2_info.setText("분쇄된 원두 커피를 드리퍼 내부에 담아줍니다.");
         step2_info2 = findViewById(R.id.step2_info2);
@@ -59,7 +63,7 @@ public class Step2Activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Step2Activity.this, MenuActivity.class);
+                Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
 
                 startActivity(intent);
 
@@ -124,7 +128,7 @@ public class Step2Activity extends AppCompatActivity {
 
             total_weight = now_weight-Float.parseFloat(base_weight);
             weight = now_weight-Float.parseFloat(base_weight)-new_weight;
-            step2_weight.setText("무게: " + Float.toString(weight) + "total_weight" + Float.toString(total_weight));
+            step2_weight.setText("현재 단계 무게: " + Float.toString(weight) + "\ntotal_weight: " + Float.toString(total_weight));
             //step2_weight.append("base weight " + base_weight);
             //step2_weight.append("now_weight: " + Float.toString(now_weight));
 
@@ -132,6 +136,8 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 20;
                 step2_flag = 0;
                 step2_textview.setText("Step 2: 뜸들이기");
+                step_coffee.setText("20");
+                step_coffee.setText("15");
                 step2_info.setText("물 15ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다." +
                         "이 작업은 가루 전체에 물이 고르게 퍼지며 추출이 원활하게 합니다. " +
                         "또한 커피에 함유된 탄산가스와 공기를 빼주는 역할도 합니다.");
@@ -143,6 +149,9 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 15;
                 step3_flag = 0;
                 step2_textview.setText("Step 3: 첫번째 추출");
+                step_coffee.setText("0");
+                step_water.setText("150");
+
                 step2_info.setText("물 150ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
                 step2_info2.setText("아래에 표시된 물의 양이 150ml가 되면 다음 단계로 넘어갑니다. ");
             }
@@ -151,6 +160,8 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 150;
                 step4_flag = 0;
                 step2_textview.setText("Step 4: 두번째 추출");
+                step_coffee.setText("0");
+                step_water.setText("100");
                 step2_info.setText("물 100ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
                 step2_info2.setText("아래에 표시된 물의 양이 100ml가 되면 다음 단계로 넘어갑니다. ");
             }
@@ -159,6 +170,8 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 100;
                 step5_flag = 0;
                 step2_textview.setText("Step 5: 마지막 추출");
+                step_coffee.setText("0");
+                step_water.setText("55");
                 step2_info.setText("물 55ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
                 step2_info2.setText("아래에 표시된 물의 양이 55ml가 되면 드립 과정이 마무리됩니다. ");
             }

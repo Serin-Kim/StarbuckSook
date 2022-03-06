@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.starbucksook">
+    package="com.example.starbucksook" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -8,34 +16,78 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StarbuckSook">
+        android:theme="@style/Theme.StarbuckSook" >
+
+        <service
+            android:name=".ConnectionService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity"></activity>
-        <activity android:name=".InfoActivity"></activity>
-        <activity android:name=".Step1Activity"></activity>
-        <activity android:name=".Step2Activity"></activity>
-        <activity android:name=".Step3Activity"></activity>
-        <activity android:name=".Step4Activity"></activity>
-        <activity android:name=".Step5Activity"></activity>
-        <activity android:name=".WeightActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".Step1Activity" />
+        <activity android:name=".Step2Activity" />
+        <activity android:name=".Step3Activity" />
+        <activity android:name=".Step4Activity" />
+        <activity android:name=".Step5Activity" />
+        <activity android:name=".WeightActivity" />
+<!--        <activity android:name=".SignUpActivity" />-->
+<!--        <activity android:name=".LoginActivity" />-->
+        <activity android:name=".ReportActivity" />
+
 
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 </manifest>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    package="com.example.starbucksook">-->
+
+<!--    <application-->
+<!--        android:allowBackup="true"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:label="@string/app_name"-->
+<!--        android:roundIcon="@mipmap/ic_launcher_round"-->
+<!--        android:supportsRtl="true"-->
+<!--        android:theme="@style/Theme.StarbuckSook">-->
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        <activity android:name=".MenuActivity"></activity>-->
+<!--        <activity android:name=".InfoActivity"></activity>-->
+<!--        <activity android:name=".Step1Activity"></activity>-->
+<!--        <activity android:name=".Step2Activity"></activity>-->
+<!--        <activity android:name=".Step3Activity"></activity>-->
+<!--        <activity android:name=".Step4Activity"></activity>-->
+<!--        <activity android:name=".Step5Activity"></activity>-->
+<!--        <activity android:name=".WeightActivity"></activity>-->
+
+<!--    </application>-->
+
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+<!--    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>-->
+<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+<!--    <uses-permission android:name="android.permission.READ_CONTACTS"/>-->
+<!--</manifest>-->
