@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -42,6 +45,8 @@ public class Step2Activity extends AppCompatActivity {
 
     public static int BUF_SIZE = 100;
 
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,7 @@ public class Step2Activity extends AppCompatActivity {
             }
         });
 
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
     }
     public class Connect extends AsyncTask< String , String,Void > {
