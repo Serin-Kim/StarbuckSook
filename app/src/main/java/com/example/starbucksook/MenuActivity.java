@@ -30,14 +30,14 @@ public class MenuActivity extends AppCompatActivity {
             setContentView(R.layout.activity_menu);
 
 //          파이어베이스에서 로그인한 사용자 가져오기
-            userName = findViewById(R.id.menu_userId);
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            if (user != null) {
-                // Name, email address, and profile photo Url
-                String name = user.getDisplayName();
-
-                userName.setText(name + "님, 안녕하세요!");
-            }
+//            userName = findViewById(R.id.menu_userId);
+//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            if (user != null) {
+//                // Name, email address, and profile photo Url
+//                String name = user.getDisplayName();
+//
+//                userName.setText(name + "님, 안녕하세요!");
+//            }
 
             layout = findViewById(R.id.menuBox);
             layout.setOnClickListener(new View.OnClickListener() {

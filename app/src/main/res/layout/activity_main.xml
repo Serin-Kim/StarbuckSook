@@ -34,19 +34,9 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/green"
         android:text="시작하기"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/font_medium"/>
 
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:textSize="50dip"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="#036635"-->
-<!--        android:text="MENU"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginBottom="10dp"/>-->
 
 
 
