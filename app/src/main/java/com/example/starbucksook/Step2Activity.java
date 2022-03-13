@@ -54,10 +54,10 @@ public class Step2Activity extends AppCompatActivity {
     public double total_time;
 
     public static int BUF_SIZE = 100;
-    TextView step4_weight;
+//    TextView step4_weight;
     TextView countdown_text;
 
-    ConstraintLayout step_check3;
+//    ConstraintLayout step_check3;
 
 
 
@@ -103,7 +103,7 @@ public class Step2Activity extends AppCompatActivity {
         step2_info2 = findViewById(R.id.step2_check_content2);
 
         step2_weight = findViewById(R.id.step2_weight_content);
-        step_check3 = findViewById(R.id.step_check3);
+//        step_check3 = findViewById(R.id.step_check3);
 
         Connect connect = new Connect();
         connect.execute(CONNECT_MSG);
@@ -411,16 +411,15 @@ public class Step2Activity extends AppCompatActivity {
 
         @Override
         public void onProgressUpdate(String... params) {
-//            Log.d("test", "Step1 Start!!");
 
             step2_weight.setText(""); // Clear the chat box
             float now_weight = Float.parseFloat(params[0]);
             float weight;
             float total_weight = now_weight - Float.parseFloat(base_weight);
             weight = now_weight - Float.parseFloat(base_weight) - new_weight;
-            step2_weight.setText("현재 단계 무게: " + Float.toString(weight) + "\ntotal_weight: " + Float.toString(total_weight));
-            //step2_weight.append("base weight " + base_weight);
-            //step2_weight.append("now_weight: " + Float.toString(now_weight));
+//            step2_weight.setText("현재 단계 무게: " + Float.toString(weight) + "\ntotal_weight: " + Float.toString(total_weight));
+//            step2_weight.setText(Float.toString(weight) + " g");
+            step2_weight.setText(String.format("%.2f", weight) + " g");
 
             if (step2_flag == 1 && total_weight > 20 && total_weight < 35) {
                 Log.d("test", "Step2 Start!!");
@@ -533,16 +532,12 @@ public class Step2Activity extends AppCompatActivity {
                 step5_flag = 1;
             }
 
-//            timer_flag = 0;
-
-
-
             else if (step6_flag == 1 && total_weight >= 340 && timer_flag==0 && fff==0) {
                 end = System.currentTimeMillis();
                 total_time = (end - start)/1000;
                 btn.setVisibility(View.VISIBLE);
                 btn.setEnabled(true);
-                step_check3.setVisibility(View.INVISIBLE);
+                step2_weight.setVisibility(View.INVISIBLE);
                 step6_flag = 0;
                 step2_textview.setText("드립 완료! 총 소요시간: " + Double.toString(total_time));
                 step2_info.setText("핸드 드립 커피가 완성되었습니다!");
