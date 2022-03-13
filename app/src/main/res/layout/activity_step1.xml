@@ -24,42 +24,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/step0_coffee"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/round_white"
-        android:drawableLeft="@drawable/ingredient_coffee"
-        android:drawablePadding="30dp"
-        android:elevation="5dp"
-        android:fontFamily="@font/font_light"
-        android:padding="20dp"
-        android:text="0g"
-        android:textSize="30sp"
+    <ImageView
+        android:id="@+id/step1_ready_img"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/step1_ready"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step1_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/step1_textview"/>
 
-    <TextView
-        android:id="@+id/step0_water"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/round_white"
-        android:textSize="30sp"
-        android:text="0g"
-        app:layout_constraintTop_toBottomOf="@+id/step1_textview"
-        app:layout_constraintLeft_toRightOf="@+id/step0_coffee"
-        android:padding="20dp"
-        android:elevation = "5dp"
-        android:fontFamily="@font/font_light"
-        android:drawableLeft="@drawable/ingredient_water"
-        android:drawablePadding="25dp"
-        />
+
+<!--    <TextView-->
+<!--        android:id="@+id/step0_coffee"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:drawableLeft="@drawable/ingredient_coffee"-->
+<!--        android:drawablePadding="30dp"-->
+<!--        android:elevation="5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:padding="20dp"-->
+<!--        android:text="30"-->
+<!--        android:textSize="30sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.131"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step1_textview" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/step0_water"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:textSize="30sp"-->
+<!--        android:text="30"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step1_textview"-->
+<!--        app:layout_constraintLeft_toRightOf="@+id/step0_coffee"-->
+<!--        android:padding="20dp"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:drawableLeft="@drawable/ingredient_water"-->
+<!--        android:drawablePadding="25dp"-->
+<!--        />-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,7 +81,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step0_water"
+        app:layout_constraintTop_toBottomOf="@+id/step1_ready_img"
         android:background="@drawable/round_lightgreen"
         android:elevation = "5dp"
         android:layout_marginTop="15dp"
@@ -143,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
-            android:text="드리퍼에 여과지를 씌운 후 끓인 물로 적셔줍니다. \n\n 여과지의 냄새를 없애주면서, 동시에 예열을 시켜주는 과정입니다."
+            android:text="드리퍼에 여과지를 씌운 후 끓인 물로 적셔줍니다. \n 여과지의 냄새를 없애주면서, 동시에 예열을 시켜주는 과정입니다."
             android:textColor="@color/stepTitle"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
