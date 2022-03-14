@@ -19,56 +19,11 @@
         android:textColor="@color/stepTitle"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:text="최종 결과"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/barchart_box"
-        android:layout_width="335dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/report_textview"
-        android:background="@drawable/round_white"
-        android:elevation = "5dp"
-        android:layout_marginTop="15dp"
-        >
-
-        <TextView
-            android:id="@+id/barchart_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="단계별로 확인하기"
-            android:textColor="@color/stepTitle"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.github.mikephil.charting.charts.HorizontalBarChart
-            android:id="@+id/barchart"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.061"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barchart_title"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
 
 
 
@@ -91,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barchart_box" />
+        app:layout_constraintTop_toBottomOf="@+id/report_textview" />
 
     <TextView
         android:id="@+id/report_step_water"
@@ -102,7 +57,7 @@
         android:background="@drawable/round_white"
         android:textSize="30sp"
         android:text="0"
-        app:layout_constraintTop_toBottomOf="@+id/barchart_box"
+        app:layout_constraintTop_toBottomOf="@+id/report_textview"
         app:layout_constraintLeft_toRightOf="@+id/report_countdown_text"
         android:padding="20dp"
         android:elevation = "5dp"
@@ -113,7 +68,47 @@
 
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/barchart_box"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_countdown_text"
+        android:background="@drawable/round_white"
+        android:elevation = "5dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="20dp"
+        >
 
+        <TextView
+            android:id="@+id/barchart_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:text="단계별로 확인하기"
+            android:textColor="@color/stepTitle"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/barchart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.457"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barchart_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -126,26 +121,3 @@
 
 
 
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:orientation="vertical"-->
-<!--    android:background="@color/background"-->
-<!--    tools:context=".ReportActivity">-->
-
-<!--&lt;!&ndash;    <com.github.mikephil.charting.charts.BarChart&ndash;&gt;-->
-<!--&lt;!&ndash;        android:id="@+id/barchart"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_height="200dp"/>&ndash;&gt;-->
-
-<!--    <com.github.mikephil.charting.charts.HorizontalBarChart-->
-<!--        android:id="@+id/barchart"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="200dp"/>-->
-
-<!--</LinearLayout>-->

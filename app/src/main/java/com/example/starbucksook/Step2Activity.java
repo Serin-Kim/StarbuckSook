@@ -122,7 +122,7 @@ public class Step2Activity extends AppCompatActivity {
                 intent.putExtra("weight_3", weight_3-weight_2);
                 intent.putExtra("weight_4", weight_4-weight_3);
                 intent.putExtra("weight_5", weight_5-weight_4);
-                intent.putExtra("total_time", total_time);
+                intent.putExtra("total_time", Double.toString(total_time));
                 intent.putExtra("total_weight", weight_5-weight_1);
                 startActivity(intent);
 
@@ -543,6 +543,8 @@ public class Step2Activity extends AppCompatActivity {
 
             if (step5_flag == 0 && total_weight >= 340){
                 Log.d("-----", "Step5: Over weight" + total_weight);
+                toastMessage.show();    // 토스트 메시지
+                ringtone.play();
                 timer2.sendEmptyMessage(5);
                 timer_flag = 0;
                 step5_flag = 1;
