@@ -122,7 +122,9 @@ public class Step2Activity extends AppCompatActivity {
                 intent.putExtra("weight_3", weight_3-weight_2);
                 intent.putExtra("weight_4", weight_4-weight_3);
                 intent.putExtra("weight_5", weight_5-weight_4);
-                intent.putExtra("total_time", Double.toString(total_time));
+                intent.putExtra("total_time", total_time);
+                Log.d("test", String.valueOf(total_time));
+
                 intent.putExtra("total_weight", weight_5-weight_1);
                 startActivity(intent);
 

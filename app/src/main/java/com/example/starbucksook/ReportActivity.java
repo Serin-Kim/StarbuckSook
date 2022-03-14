@@ -3,6 +3,7 @@ package com.example.starbucksook;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +24,8 @@ import java.util.ArrayList;
 public class ReportActivity extends AppCompatActivity {
 
     // 무게 데이터 받아옴
-     public float weight_1, weight_2, weight_3, weight_4, weight_5, total_weight;
-     public String total_time;
+     public float weight_1, weight_2, weight_3, weight_4, weight_5, total_weight, total_time_float;
+     public double total_time;
      TextView report_countdown_text;
      TextView report_step_water;
 
@@ -42,13 +43,11 @@ public class ReportActivity extends AppCompatActivity {
         weight_4 = intent.getFloatExtra("weight_4", 0);
         weight_5 = intent.getFloatExtra("weight_5", 0);
         total_weight = intent.getFloatExtra("total_weight", 0);
-        total_time = intent.getStringExtra("total_time");
+        total_time = intent.getDoubleExtra("total_time", 0);
+        total_time_float = (float) total_time;
 
 
-        report_countdown_text = findViewById(R.id.report_countdown_text);
-        report_step_water = findViewById(R.id.report_step_water);
-        report_countdown_text.setText(total_time);
-//        report_step_water.setText(Float.toString(total_weight));
+
 
 
         float groupSpace = 0.24f; // 그룹 그래프간 간격
@@ -61,6 +60,20 @@ public class ReportActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
+
+
+
+        report_countdown_text = findViewById(R.id.report_countdown_text);
+        report_step_water = findViewById(R.id.report_step_water);
+        report_countdown_text.setText(String.valueOf(total_time));
+        report_step_water.setText(String.valueOf(total_weight));
+
+        Log.d("test",  "시간은 !!!!!!!!!!" +String.valueOf(total_time));
+
+
+
+
+
 
         chart = findViewById(R.id.barchart);
 
@@ -84,7 +97,8 @@ public class ReportActivity extends AppCompatActivity {
 ////            values1.add(new BarEntry(i, (float) (Math.random() * 10)));
 //            values2.add(new BarEntry(i, (float) (Math.random() * 20)));
 //        }
-        values2.add(new BarEntry(0, Float.parseFloat(total_time)));
+
+        values2.add(new BarEntry(0, total_time_float));
         values2.add(new BarEntry(1, total_weight));
         values2.add(new BarEntry(2, weight_5));
         values2.add(new BarEntry(3, weight_4));
