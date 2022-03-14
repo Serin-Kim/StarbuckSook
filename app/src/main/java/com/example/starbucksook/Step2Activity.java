@@ -112,15 +112,33 @@ public class Step2Activity extends AppCompatActivity {
         step2_info2.setText("아래에 표시되는 원두의 무게가 20g이 초과되면 다음 단계로 넘어갑니다.");
         new_weight = 0;
         btn = (Button)findViewById(R.id.step2_btn);
+        btn = (Button)findViewById(R.id.step2_btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
-
+                intent.putExtra("weight_1", weight_1);
+                intent.putExtra("weight_2", weight_2-weight_1);
+                intent.putExtra("weight_3", weight_3-weight_2);
+                intent.putExtra("weight_4", weight_4-weight_3);
+                intent.putExtra("weight_5", weight_5-weight_4);
+                intent.putExtra("total_time", total_time);
+                intent.putExtra("total_weight", weight_5-weight_1);
                 startActivity(intent);
 
             }
         });
+
+
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
+//
+//                startActivity(intent);
+//
+//            }
+//        });
 
         countdown_text = findViewById(R.id.countdown_text);
 
@@ -451,7 +469,6 @@ public class Step2Activity extends AppCompatActivity {
 
             if (step2_flag == 0 && total_weight >= 35) {
                 Log.d("-----", "Step2: Over weight: " + total_weight);
-//                    timer.schedule(timerTask, 0, 1000);
 
                 toastMessage.show();    // 토스트 메시지
                 ringtone.play();

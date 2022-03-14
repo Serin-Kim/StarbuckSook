@@ -192,64 +192,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step_check2"/>
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:id="@+id/step_check3"-->
-<!--        android:layout_width="335dp"-->
-<!--        android:layout_height="120dp"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/step_check2"-->
-<!--        android:background="@drawable/round_weight_btn"-->
-<!--        android:elevation = "5dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        -->
-<!--        >-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/step2_weight_title"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:text="무게"-->
-<!--            android:textColor="@color/stepTitle"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.061"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/step2_weight_content"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:text=""-->
-<!--            android:textColor="@color/stepTitle"-->
-<!--            android:textSize="40sp"-->
-<!--            android:gravity="center"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.061"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/step2_weight_title" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/step2_weight_content"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text=""-->
-<!--            android:textColor="@color/stepTitle"-->
-<!--            android:textSize="40sp"-->
-
-<!--            android:gravity="center_vertical"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"/>-->
-
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     <Button
         android:id="@+id/step2_btn"

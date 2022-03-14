@@ -1,5 +1,6 @@
 package com.example.starbucksook;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -17,6 +18,17 @@ import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import java.util.ArrayList;
 
 public class ReportActivity extends AppCompatActivity {
+
+    // 무게 데이터 받아옴
+    // public float weight_1, weight_2, weight_3, weight_4, weight_5;
+//    Intent intent = getIntent();
+//    public float weight_1 = intent.getFloatExtra("weight_1", 0);
+//    public float weight_2 = intent.getFloatExtra("weight_2", 0);
+//    public float weight_3 = intent.getFloatExtra("weight_3", 0);
+//    public float weight_4 = intent.getFloatExtra("weight_4", 0);
+//    public float weight_5 = intent.getFloatExtra("weight_5", 0);
+//    public float total_weight = intent.getFloatExtra("total_weight", 0);
+//    public float total_time = intent.getFloatExtra("total_time", 0);
 
     private BarChart chart;
 
@@ -107,6 +119,10 @@ public class ReportActivity extends AppCompatActivity {
         YAxis yRAxis = chart.getAxisRight();
         yRAxis.setAxisMinimum(0);
         yRAxis.setDrawLabels(false);
+
+
+        // chart가 그려질 때 애니메이션
+        chart.animateXY(0,800);
 
 
         // barData.getGroupWith(...) is a helper that calculates the width each group needs based on the provided parameters
