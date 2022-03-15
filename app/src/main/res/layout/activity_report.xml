@@ -116,7 +116,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/step_check2"
+        android:id="@+id/report_score"
         android:layout_width="335dp"
         android:layout_height="120dp"
         android:orientation="vertical"
@@ -129,12 +129,12 @@
         >
 
         <TextView
-            android:id="@+id/step2_check_title2"
+            android:id="@+id/report_score_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:text="다음으로"
+            android:text="레시피 달성률"
             android:textColor="@color/stepTitle"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -144,21 +144,58 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/step2_check_content2"
-            android:layout_width="300dp"
+            android:id="@+id/report_score_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:text=" "
-            android:textColor="@color/stepTitle"
-            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:text="75 %"
+            android:textColor="@color/green"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.061"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/step2_check_title2" />
+            app:layout_constraintTop_toBottomOf="@+id/report_score_title"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="2dp"
+            android:layout_height="200dp"
+            android:background="@color/background"
+            android:layout_marginLeft="19dp"
+            app:layout_constraintLeft_toRightOf="@+id/report_score_content"/>
+
+        <TextView
+            android:id="@+id/report_score_content2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:text=" "
+            android:textColor="@color/stepTitle"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toRightOf="@+id/line"
+            app:layout_constraintTop_toBottomOf="@+id/report_score_title"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/report_btn"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/green"
+        android:text="결과 공유하기"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/font_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_score"/>
 
 
 

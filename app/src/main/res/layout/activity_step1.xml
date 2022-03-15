@@ -37,43 +37,6 @@
         app:layout_constraintTop_toBottomOf="@+id/step1_textview"/>
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/step0_coffee"-->
-<!--        android:layout_width="160dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@drawable/round_white"-->
-<!--        android:drawableLeft="@drawable/ingredient_coffee"-->
-<!--        android:drawablePadding="30dp"-->
-<!--        android:elevation="5dp"-->
-<!--        android:fontFamily="@font/font_light"-->
-<!--        android:padding="20dp"-->
-<!--        android:text="30"-->
-<!--        android:textSize="30sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.131"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/step1_textview" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/step0_water"-->
-<!--        android:layout_width="160dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:background="@drawable/round_white"-->
-<!--        android:textSize="30sp"-->
-<!--        android:text="30"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/step1_textview"-->
-<!--        app:layout_constraintLeft_toRightOf="@+id/step0_coffee"-->
-<!--        android:padding="20dp"-->
-<!--        android:elevation = "5dp"-->
-<!--        android:fontFamily="@font/font_light"-->
-<!--        android:drawableLeft="@drawable/ingredient_water"-->
-<!--        android:drawablePadding="25dp"-->
-<!--        />-->
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/step0_check"
         android:layout_width="335dp"

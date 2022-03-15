@@ -29,10 +29,18 @@ public class ReportActivity extends AppCompatActivity {
      TextView report_countdown_text;
      TextView report_step_water;
 
+     TextView report_score_content;
+     TextView report_score_content2;
+
+     int cnt = 0;
+
     private BarChart chart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_report);
 
         Intent intent = getIntent();
         weight_1 = intent.getFloatExtra("weight_1", 0);
@@ -51,15 +59,14 @@ public class ReportActivity extends AppCompatActivity {
 
         int start = 0;
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report);
-
-
         report_countdown_text = findViewById(R.id.report_countdown_text);
         report_step_water = findViewById(R.id.report_step_water);
         report_countdown_text.setText(String.valueOf(Math.round(total_time)));
         report_step_water.setText(String.valueOf(Math.round(total_weight)));
 
+
+        report_score_content = findViewById(R.id.report_score_content);
+        report_score_content2 = findViewById(R.id.report_score_content2);
 
 
         chart = findViewById(R.id.barchart);
@@ -144,5 +151,46 @@ public class ReportActivity extends AppCompatActivity {
         // barData.getGroupWith(...) is a helper that calculates the width each group needs based on the provided parameters
         chart.groupBars(start, groupSpace, barSpace);
         chart.invalidate(); // refresh
+
+
+
+
+
+        // Score
+        int[] recipe = {55, 100, 150, 15, 20};
+        int[] yourData = {(int)weight_5, (int)weight_4, (int)weight_3, (int)weight_2, (int)weight_1};
+        for (int i = 0; i < 5; i++) {
+            int recipeVal = recipe[i];
+            int yourDataVal = yourData[i];
+
+            if (Math.abs(recipeVal - yourDataVal) <= 10) {
+                cnt++;
+            }
+        }
+
+        if (cnt == 0) {
+            report_score_content.setText("0 %");
+            report_score_content2.setText("차근차근 해볼까요? 😇");
+        } else if (cnt == 1) {
+            report_score_content.setText("20 %");
+            report_score_content2.setText("조금 더 천천히 ☕️");
+        } else if (cnt == 2) {
+            report_score_content.setText("40 %");
+            report_score_content2.setText("한 번 더 해볼까요? ☕");
+        } else if (cnt == 3) {
+            report_score_content.setText("60 %");
+            report_score_content2.setText("훌륭해요 😊");
+        } else if (cnt == 4) {
+            report_score_content.setText("80 %");
+            report_score_content2.setText("잘했어요 😋");
+        } else if (cnt == 5) {
+            report_score_content.setText("100 %");
+            report_score_content2.setText("당신은 이미 바리스타 👍🏻");
+        }
+
+
+
+
+
     }
 }
