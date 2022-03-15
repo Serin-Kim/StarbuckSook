@@ -29,12 +29,10 @@ public class ReportActivity extends AppCompatActivity {
      TextView report_countdown_text;
      TextView report_step_water;
 
-
     private BarChart chart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         Intent intent = getIntent();
         weight_1 = intent.getFloatExtra("weight_1", 0);
@@ -47,31 +45,20 @@ public class ReportActivity extends AppCompatActivity {
         total_time_float = (float) total_time;
 
 
-
-
-
         float groupSpace = 0.24f; // 그룹 그래프간 간격
         float barSpace = 0.08f; // 각 그래프간 간격
         float barWidth = 0.25f; // 각 그래프의 너비
 
-//        int groupCount = seekBarX.getProgress() + 1;
         int start = 0;
-        int last = start + 100;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
 
-
         report_countdown_text = findViewById(R.id.report_countdown_text);
         report_step_water = findViewById(R.id.report_step_water);
-        report_countdown_text.setText(String.valueOf(total_time));
-        report_step_water.setText(String.valueOf(total_weight));
-
-        Log.d("test",  "시간은 !!!!!!!!!!" +String.valueOf(total_time));
-
-
-
+        report_countdown_text.setText(String.valueOf(Math.round(total_time)));
+        report_step_water.setText(String.valueOf(Math.round(total_weight)));
 
 
 
@@ -81,30 +68,18 @@ public class ReportActivity extends AppCompatActivity {
         ArrayList<BarEntry> values2 = new ArrayList<>();
 
 
+        values1.add(new BarEntry(0, (float) 55));   // 추출 3
+        values1.add(new BarEntry(1, (float) 100));  // 추출 2
+        values1.add(new BarEntry(2, (float) 150));  // 추출 1
+        values1.add(new BarEntry(3, (float) 15));   // 뜸 들이기
+        values1.add(new BarEntry(4, (float) 20));   // 커피 무게
 
+        values2.add(new BarEntry(0, weight_5));
+        values2.add(new BarEntry(1, weight_4));
+        values2.add(new BarEntry(2, weight_3));
+        values2.add(new BarEntry(3, weight_2));
+        values2.add(new BarEntry(4, weight_1));
 
-        values1.add(new BarEntry(0, (float) 120));  // 총 소요 시간
-        values1.add(new BarEntry(1, (float) 320));  // 총 추출 양
-        values1.add(new BarEntry(2, (float) 55));   // 추출 3
-        values1.add(new BarEntry(3, (float) 100));  // 추출 2
-        values1.add(new BarEntry(4, (float) 150));  // 추출 1
-        values1.add(new BarEntry(5, (float) 15));   // 뜸 들이기
-        values1.add(new BarEntry(6, (float) 20));   // 커피 무게
-
-
-
-//        for (int i = 0; i < 7; i++) {
-////            values1.add(new BarEntry(i, (float) (Math.random() * 10)));
-//            values2.add(new BarEntry(i, (float) (Math.random() * 20)));
-//        }
-
-        values2.add(new BarEntry(0, total_time_float));
-        values2.add(new BarEntry(1, total_weight));
-        values2.add(new BarEntry(2, weight_5));
-        values2.add(new BarEntry(3, weight_4));
-        values2.add(new BarEntry(4, weight_3));
-        values2.add(new BarEntry(5, weight_2));
-        values2.add(new BarEntry(6, weight_1));
 
         BarDataSet set1, set2;
 
@@ -144,53 +119,30 @@ public class ReportActivity extends AppCompatActivity {
 //        xAxis.setTextSize(10f); // 라벨 크기
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM); // X축 데이터 표시 위치
 
-//        ArrayList<String> xAxisVals = new ArrayList<>();
-//        xAxisVals.add("1");
-//        xAxisVals.add("2");
-//        xAxisVals.add("3");
-//        xAxisVals.add("4");
-//        xAxisVals.add("5");
-//        xAxisVals.add("6");
 
 
 
 
-
-        String[] xAxisVals = new String[]{"총 소요 시간", "총 추출량", "추출 3", "추출 2","추출 1", "뜸 들이기", "커피", "test1", "test2"};
+        String[] xAxisVals = new String[]{"추출 3", "추출 2","추출 1", "뜸 들이기", "커피"};
 
         // String setter in x-Axis
-//        xAxis.setValueFormatter(new com.github.mikephil.charting.formatter.IndexAxisValueFormatter(xAxisVals));
-
-//        xAxis.setLabelCount(5, true);
-//        xAxis.setGranularityEnabled(true);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisVals));
-
-
-
-
 
         // y축 (left)
         YAxis yLAxis = chart.getAxisLeft();
         yLAxis.setAxisMinimum(0);
 
-
         // y축 (right)
         YAxis yRAxis = chart.getAxisRight();
         yRAxis.setAxisMinimum(0);
-//        yRAxis.setDrawLabels(false);
-
 
         // chart가 그려질 때 애니메이션
         chart.animateXY(0,800);
 
 
         // barData.getGroupWith(...) is a helper that calculates the width each group needs based on the provided parameters
-//        chart.getXAxis().setAxisMaximum(start + chart.getBarData().getGroupWidth(groupSpace, barSpace) * 7);
         chart.groupBars(start, groupSpace, barSpace);
         chart.invalidate(); // refresh
-
     }
-
-
 }
