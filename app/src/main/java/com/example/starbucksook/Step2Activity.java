@@ -461,10 +461,10 @@ public class Step2Activity extends AppCompatActivity {
                 // just added
                 step_coffee.setVisibility(View.INVISIBLE);
                 countdown_text.setVisibility(View.VISIBLE);
-                step2_info.setText("물 15ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다." +
+                step2_info.setText("물 15g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다." +
                         "이 작업은 가루 전체에 물이 고르게 퍼지며 추출이 원활하게 합니다. " +
                         "또한 커피에 함유된 탄산가스와 공기를 빼주는 역할도 합니다.");
-                step2_info2.setText("아래에 표시된 물의 양이 15ml가 되면 타이머가 시작됩니다. 40초가 지나면 다음 단계로 넘어갑니다. ");
+                step2_info2.setText("아래에 표시된 물의 양이 15g이 되면 타이머가 시작됩니다. 40초가 지나면 다음 단계로 넘어갑니다. ");
                 countdown_text.setText(" 15");
                 Log.d("-----", "Step2 : " + total_weight);
             }
@@ -488,8 +488,8 @@ public class Step2Activity extends AppCompatActivity {
                 step2_textview.setText("Step 3 첫 번째 추출");
                 step_coffee.setText("0");
                 step_water.setText("150");
-                step2_info.setText("물 150ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
-                step2_info2.setText("아래에 표시된 물의 양이 150ml가 되면 타이머가 시작됩니다. 시간이 다 되면 다음 단계로 넘어갑니다. ");
+                step2_info.setText("물 150g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+                step2_info2.setText("아래에 표시된 물의 양이 150g이 되면 타이머가 시작됩니다. 시간이 다 되면 다음 단계로 넘어갑니다. ");
                 countdown_text.setText(" 10");
                 Log.d("-----", "Step3 : " + total_weight);
             }
@@ -512,8 +512,8 @@ public class Step2Activity extends AppCompatActivity {
                 step2_textview.setText("Step 4 두 번째 추출");
                 step_coffee.setText("0");
                 step_water.setText("100");
-                step2_info.setText("물 100ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
-                step2_info2.setText("아래에 표시된 물의 양이 100ml가 되면 다음 단계로 넘어갑니다. ");
+                step2_info.setText("물 100g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+                step2_info2.setText("아래에 표시된 물의 양이 100g이 되면 다음 단계로 넘어갑니다. ");
                 countdown_text.setText(" 6");
                 Log.d("-----", "Step4 : " + total_weight);
             }
@@ -537,8 +537,8 @@ public class Step2Activity extends AppCompatActivity {
                 step2_textview.setText("Step 5 마지막 추출");
                 step_coffee.setText("0");
                 step_water.setText("55");
-                step2_info.setText("물 55ml를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
-                step2_info2.setText("아래에 표시된 물의 양이 55ml가 되면 드립 과정이 마무리됩니다. ");
+                step2_info.setText("물 55g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+                step2_info2.setText("아래에 표시된 물의 양이 55g이 되면 드립 과정이 마무리됩니다. ");
                 countdown_text.setText(" 4");
                 Log.d("-----", "Step5 : " + total_weight);
             }
