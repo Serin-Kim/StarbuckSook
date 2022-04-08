@@ -1,6 +1,7 @@
 package com.example.starbucksook;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -52,8 +53,6 @@ public class Step2Activity extends AppCompatActivity {
     public Button btn;
     public Timer timer;
     public TimerTask timerTask;
-    int hour=0, minute=0, second=5;
-    int cnt=7;
     public long start, end;
     public double total_time;
     public float total_weight;
@@ -64,9 +63,9 @@ public class Step2Activity extends AppCompatActivity {
 
     // 타이머 실행 시 알림
     Toast toastMessage;
-    Uri notification;
-    Ringtone ringtone;
-
+//    Uri notification;
+//    Ringtone ringtone;
+    MediaPlayer ringtone;
 
 
 
@@ -87,8 +86,9 @@ public class Step2Activity extends AppCompatActivity {
 
         // 타이머 실행 시 알림
         toastMessage = Toast.makeText(this, "타이머를 시작합니다", Toast.LENGTH_LONG);
-        notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+//        notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//        ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        ringtone = MediaPlayer.create(this, R.raw.timer_sound);
 
         countdown_text = (TextView)findViewById(R.id.countdown_text);
 
@@ -97,7 +97,7 @@ public class Step2Activity extends AppCompatActivity {
         timer2 = new TimerHandler();
 
         step2_textview = findViewById(R.id.step2_textview);
-        step2_textview.setText("Step 1 원두 담기");
+        step2_textview.setText("Step 1. 원두 담기");
         step_coffee = findViewById(R.id.step_coffee);
         step_water = findViewById(R.id.step_water);
         step2_info = findViewById(R.id.step2_check_content);
@@ -132,91 +132,18 @@ public class Step2Activity extends AppCompatActivity {
         });
 
 
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
-//
-//                startActivity(intent);
-//
-//            }
-//        });
-
         countdown_text = findViewById(R.id.countdown_text);
 
-        /* 남은 시간 */
-        String initTime = "";
-        initTime =  "" +  hour + ":";
-        if(minute < 10) initTime += "0";
-        initTime += minute +":";
-        if(second < 10) initTime += "0";
-        initTime += second;
 //        countdown_text.setText("남은 시간 - " + initTime);
 //        countdown_text.setText(initTime);
         countdown_text.setText("---");
 
-
-
-
-        timer = new Timer();
-        timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                // 반복실행할 구문
-
-                // 0초 이상이면
-                if(second != 0) {
-                    //1초씩 감소
-                    timer_flag = 1;
-                    second--;
-
-                    // 0분 이상이면
-                } else if(minute != 0) {
-                    // 1분 = 60초
-                    second = 60;
-                    second--;
-                    minute--;
-
-                    // 0시간 이상이면
-                } else if(hour != 0) {
-                    // 1시간 = 60분
-                    second = 60;
-                    minute = 60;
-                    second--;
-                    minute--;
-                    hour--;
-                }
-
-                //시, 분, 초가 10이하(한자리수) 라면
-                // 숫자 앞에 0을 붙인다 ( 8 -> 08 )
-
-                String timeLeftText = "";
-
-                timeLeftText =  "" +  hour + ":";
-
-                if(minute < 10) timeLeftText += "0";
-                timeLeftText += minute +":";
-
-                //초가 10보다 작으면 0이 붙는다.
-                if(second < 10) timeLeftText += "0";
-                timeLeftText += second;
-
-                countdown_text.setText(" " + timeLeftText);
-
-                // 시분초가 다 0이라면 text를 띄우고 타이머를 종료한다..
-                if(hour == 0 && minute == 0 && second == 0) {
-//                    timerTask.cancel();//타이머 종료
-                    countdown_text.setText("타이머가 종료되었습니다.");
-                    timer_flag = 0;
-                }
-            }
-        };
     }
 
 
 
     /*
-    타이머 추가 시작
+    타이머 시작
      */
 
     @Override
@@ -236,8 +163,11 @@ public class Step2Activity extends AppCompatActivity {
 
             switch (msg.what){
                 case 0: // 시작 하기
-                    if (timerTime == 0) {
-                        removeMessages(0);
+                    if (timerTime == -1) {
+                        countdown_text.setText(" 0"); // 타이머 끝나면 0 나오게 하려고
+
+//                        removeMessages(0);
+
                         if(total_weight > 35 && total_weight < 185){
                             weight_2 = total_weight;
                         }
@@ -250,10 +180,12 @@ public class Step2Activity extends AppCompatActivity {
                         if(total_weight >= 340){
                             weight_5 = total_weight;
                         }
+
                         fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음
 
                         break;
                     }
+
                     // Main Thread 가 쉴때 Main Thread 가 실행하기에
                     // 오래걸리는 작업은 하면 안된다. (무한 루프 문 etc.. 은 쓰레드로)
                     countdown_text.setText(" " + timerTime--);
@@ -272,7 +204,8 @@ public class Step2Activity extends AppCompatActivity {
                     break;
 
                 case 2: // 정지 후 타이머 초기화
-                    removeMessages(0); // 타이머 메시지 삭제
+//                    countdown_text.setText(" 0");
+//                    removeMessages(0); // 타이머 메시지 삭제
                     timerTime = 10; // 타이머 초기화
                     countdown_text.setText(" " +timerTime);
 
@@ -286,7 +219,7 @@ public class Step2Activity extends AppCompatActivity {
                         timer2.sendEmptyMessage(0);
                         //    button.setText("일시정지");
 
-                    }else if(status == 1){ // 타이머 동중이라면, 일시 정지 시키기
+                    }else if(status == 1){ // 타이머 동작 중이라면, 일시 정지 시키기
 
                         status = 0;
                         // 1번 메시지를 던진다.
@@ -300,10 +233,9 @@ public class Step2Activity extends AppCompatActivity {
 
 
                 case 3: // 정지 후 타이머 초기화
-                    removeMessages(0); // 타이머 메시지 삭제
+//                    removeMessages(0); // 타이머 메시지 삭제
                     timerTime = 10; // 타이머 초기화
                     countdown_text.setText(" " +timerTime);
-
 
                     status = 0;
 
@@ -323,7 +255,7 @@ public class Step2Activity extends AppCompatActivity {
 
                     break;
                 case 4: // 정지 후 타이머 초기화
-                    removeMessages(0); // 타이머 메시지 삭제
+//                    removeMessages(0); // 타이머 메시지 삭제
                     timerTime = 6; // 타이머 초기화
                     countdown_text.setText(" " +timerTime);
 
@@ -347,8 +279,9 @@ public class Step2Activity extends AppCompatActivity {
 
                     break;
                 case 5: // 정지 후 타이머 초기화
-                    removeMessages(0); // 타이머 메시지 삭제
+//                    removeMessages(0); // 타이머 메시지 삭제
                     timerTime = 4; // 타이머 초기화
+                    countdown_text.setText(" " +timerTime);
                     countdown_text.setText(" " +timerTime);
 
                     status = 0;
@@ -375,7 +308,7 @@ public class Step2Activity extends AppCompatActivity {
     }
 
     /*
-    타이머 추가 종료
+    타이머 종료
      */
 
 
@@ -453,7 +386,7 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 20;
                 timer_flag = 1;
                 step2_flag = 0;
-                step2_textview.setText("Step 2 뜸들이기");
+                step2_textview.setText("Step 2. 뜸들이기");
                 step_coffee.setText("20");
                 step_water.setText("15");
 
@@ -473,7 +406,7 @@ public class Step2Activity extends AppCompatActivity {
                 Log.d("-----", "Step2: Over weight: " + total_weight);
 
                 toastMessage.show();    // 토스트 메시지
-                ringtone.play();
+                ringtone.start();
                 timer2.sendEmptyMessage(0);
                 timer_flag = 0;
                 step2_flag = 1;
@@ -485,7 +418,7 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 15;
                 timer_flag = 1;
                 step3_flag = 0;
-                step2_textview.setText("Step 3 첫 번째 추출");
+                step2_textview.setText("Step 3. 첫 번째 추출");
                 step_coffee.setText("0");
                 step_water.setText("150");
                 step2_info.setText("물 150g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
@@ -497,7 +430,7 @@ public class Step2Activity extends AppCompatActivity {
             if (step3_flag == 0 && total_weight >= 185){
                 Log.d("-----", "Step3: Over weight: " + total_weight);
                 toastMessage.show();    // 토스트 메시지
-                ringtone.play();
+                ringtone.start();
                 timer2.sendEmptyMessage(2);
                 timer_flag = 0;
                 step3_flag = 1;
@@ -509,7 +442,7 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 150;
                 timer_flag = 1;
                 step4_flag = 0;
-                step2_textview.setText("Step 4 두 번째 추출");
+                step2_textview.setText("Step 4. 두 번째 추출");
                 step_coffee.setText("0");
                 step_water.setText("100");
                 step2_info.setText("물 100g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
@@ -521,7 +454,7 @@ public class Step2Activity extends AppCompatActivity {
             if (step4_flag == 0 && total_weight >= 285){
                 Log.d("-----", "Step4: Over weight: " + total_weight);
                 toastMessage.show();    // 토스트 메시지
-                ringtone.play();
+                ringtone.start();
                 timer2.sendEmptyMessage(4);
                 timer_flag = 0;
                 step4_flag = 1;
@@ -534,7 +467,7 @@ public class Step2Activity extends AppCompatActivity {
                 new_weight += 100;
                 timer_flag = 1;
                 step5_flag = 0;
-                step2_textview.setText("Step 5 마지막 추출");
+                step2_textview.setText("Step 5. 마지막 추출");
                 step_coffee.setText("0");
                 step_water.setText("55");
                 step2_info.setText("물 55g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
@@ -546,7 +479,7 @@ public class Step2Activity extends AppCompatActivity {
             if (step5_flag == 0 && total_weight >= 340){
                 Log.d("-----", "Step5: Over weight" + total_weight);
                 toastMessage.show();    // 토스트 메시지
-                ringtone.play();
+                ringtone.start();
                 timer2.sendEmptyMessage(5);
                 timer_flag = 0;
                 step5_flag = 1;
@@ -569,3 +502,577 @@ public class Step2Activity extends AppCompatActivity {
     }
 }
 
+
+
+
+//package com.example.starbucksook;
+//
+//import android.content.Intent;
+//import android.media.Ringtone;
+//import android.media.RingtoneManager;
+//import android.net.Uri;
+//import android.os.AsyncTask;
+//import android.os.Bundle;
+//import android.util.Log;
+//import android.view.View;
+//import android.widget.Button;
+//import android.widget.TextView;
+//import android.os.Handler;
+//import android.os.Message;
+//import android.os.SystemClock;
+//import android.widget.Toast;
+//
+//import androidx.annotation.NonNull;
+//import androidx.appcompat.app.AppCompatActivity;
+//import androidx.constraintlayout.widget.ConstraintLayout;
+//
+//import java.io.DataInputStream;
+//import java.io.DataOutputStream;
+//import java.io.IOException;
+//import java.net.Socket;
+//import java.net.UnknownHostException;
+//import java.util.Timer;
+//import java.util.TimerTask;
+//
+//public class Step2Activity extends AppCompatActivity {
+//    TextView step2_info;
+//    TextView step2_textview;
+//    TextView step2_info2;
+//    TextView step2_weight;
+//    TextView step_coffee;
+//    TextView step_water;
+//    public Socket client;
+//    public DataOutputStream dataOutput;
+//    public DataInputStream dataInput;
+//    public static String SERVER_IP = "192.168.101.101";
+//    public static String CONNECT_MSG = "connect";
+//    public static String STOP_MSG = "stop";
+//    public String base_weight;
+//    public float new_weight;
+//    private int step2_flag = 1;
+//    private int step3_flag = 1;
+//    private int step4_flag = 1;
+//    private int step5_flag = 1;
+//    private int step6_flag = 1;
+//    public int timer_flag = 1;
+//    public int fff = 1;
+//    public Button btn;
+//    public Timer timer;
+//    public TimerTask timerTask;
+//    int hour=0, minute=0, second=5;
+//    int cnt=7;
+//    public long start, end;
+//    public double total_time;
+//    public float total_weight;
+//    public float weight_1, weight_2, weight_3, weight_4, weight_5;
+//
+//    public static int BUF_SIZE = 100;
+//    TextView countdown_text;
+//
+//    // 타이머 실행 시 알림
+//    Toast toastMessage;
+//    Uri notification;
+//    Ringtone ringtone;
+//
+//
+//
+//
+//    int timerTime = 15; // 3 초를 디폴트로.
+//    // Timer 를 처리해주는 핸들러
+//    TimerHandler timer2;
+//    boolean isRunning = true;
+//
+//    int status = 0 ; // 0:정지, 1:시작, 2:일시정지
+//
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_step2);
+//        start = System.currentTimeMillis();
+//
+//
+//        // 타이머 실행 시 알림
+//        toastMessage = Toast.makeText(this, "타이머를 시작합니다", Toast.LENGTH_LONG);
+//        notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//        ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+//
+//        countdown_text = (TextView)findViewById(R.id.countdown_text);
+//
+//        countdown_text.setVisibility(View.INVISIBLE);
+//
+//        timer2 = new TimerHandler();
+//
+//        step2_textview = findViewById(R.id.step2_textview);
+//        step2_textview.setText("Step 1 원두 담기");
+//        step_coffee = findViewById(R.id.step_coffee);
+//        step_water = findViewById(R.id.step_water);
+//        step2_info = findViewById(R.id.step2_check_content);
+//        step2_info.setText("분쇄된 원두 커피를 드리퍼 내부에 담아줍니다.");
+//        step2_info2 = findViewById(R.id.step2_check_content2);
+//
+//        step2_weight = findViewById(R.id.step2_weight_content);
+////        step_check3 = findViewById(R.id.step_check3);
+//
+//        Connect connect = new Connect();
+//        connect.execute(CONNECT_MSG);
+//        step2_info2.setText("아래에 표시되는 원두의 무게가 20g이 초과되면 다음 단계로 넘어갑니다.");
+//        new_weight = 0;
+//        btn = (Button)findViewById(R.id.step2_btn);
+//        btn = (Button)findViewById(R.id.step2_btn);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
+//                intent.putExtra("weight_1", weight_1);
+//                intent.putExtra("weight_2", weight_2-weight_1);
+//                intent.putExtra("weight_3", weight_3-weight_2);
+//                intent.putExtra("weight_4", weight_4-weight_3);
+//                intent.putExtra("weight_5", weight_5-weight_4);
+//                intent.putExtra("total_time", total_time);
+//                Log.d("test", String.valueOf(total_time));
+//
+//                intent.putExtra("total_weight", weight_5-weight_1);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//
+////        btn.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View view) {
+////                Intent intent = new Intent(Step2Activity.this, ReportActivity.class);
+////
+////                startActivity(intent);
+////
+////            }
+////        });
+//
+//        countdown_text = findViewById(R.id.countdown_text);
+//
+//        /* 남은 시간 */
+//        String initTime = "";
+//        initTime =  "" +  hour + ":";
+//        if(minute < 10) initTime += "0";
+//        initTime += minute +":";
+//        if(second < 10) initTime += "0";
+//        initTime += second;
+////        countdown_text.setText("남은 시간 - " + initTime);
+////        countdown_text.setText(initTime);
+//        countdown_text.setText("---");
+//
+//
+//
+//
+//        timer = new Timer();
+//        timerTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                // 반복실행할 구문
+//
+//                // 0초 이상이면
+//                if(second != 0) {
+//                    //1초씩 감소
+//                    timer_flag = 1;
+//                    second--;
+//
+//                    // 0분 이상이면
+//                } else if(minute != 0) {
+//                    // 1분 = 60초
+//                    second = 60;
+//                    second--;
+//                    minute--;
+//
+//                    // 0시간 이상이면
+//                } else if(hour != 0) {
+//                    // 1시간 = 60분
+//                    second = 60;
+//                    minute = 60;
+//                    second--;
+//                    minute--;
+//                    hour--;
+//                }
+//
+//                //시, 분, 초가 10이하(한자리수) 라면
+//                // 숫자 앞에 0을 붙인다 ( 8 -> 08 )
+//
+//                String timeLeftText = "";
+//
+//                timeLeftText =  "" +  hour + ":";
+//
+//                if(minute < 10) timeLeftText += "0";
+//                timeLeftText += minute +":";
+//
+//                //초가 10보다 작으면 0이 붙는다.
+//                if(second < 10) timeLeftText += "0";
+//                timeLeftText += second;
+//
+//                countdown_text.setText(" " + timeLeftText);
+//
+//                // 시분초가 다 0이라면 text를 띄우고 타이머를 종료한다..
+//                if(hour == 0 && minute == 0 && second == 0) {
+////                    timerTask.cancel();//타이머 종료
+//                    countdown_text.setText("타이머가 종료되었습니다.");
+//                    timer_flag = 0;
+//                }
+//            }
+//        };
+//    }
+//
+//
+//
+//    /*
+//    타이머 추가 시작
+//     */
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        if(timer2 != null)
+//            timer2.removeMessages(0);
+//        isRunning = false;
+//    }
+//
+//    // 타이머 핸들러 클래스.
+//    class TimerHandler extends Handler{
+//
+//        @Override
+//        public void handleMessage(@NonNull Message msg) {
+//            super.handleMessage(msg);
+//
+//            switch (msg.what){
+//                case 0: // 시작 하기
+//                    if (timerTime == 0) {
+//                        removeMessages(0);
+//                        if(total_weight > 35 && total_weight < 185){
+//                            weight_2 = total_weight;
+//                        }
+//                        if(total_weight > 185 && total_weight < 285){
+//                            weight_3 = total_weight;
+//                        }
+//                        if(total_weight >= 285 && total_weight < 340){
+//                            weight_4 = total_weight;
+//                        }
+//                        if(total_weight >= 340){
+//                            weight_5 = total_weight;
+//                        }
+//                        fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음
+//
+//                        break;
+//                    }
+//                    // Main Thread 가 쉴때 Main Thread 가 실행하기에
+//                    // 오래걸리는 작업은 하면 안된다. (무한 루프 문 etc.. 은 쓰레드로)
+//                    countdown_text.setText(" " + timerTime--);
+//                    sendEmptyMessageDelayed(0, 1000);
+//                    Log.d("test", "msg.what:0 time = " + timerTime);
+//
+//                    break;
+//
+//                case 1: // 일시 정지
+//                    removeMessages(0); // 타이머 메시지 삭제
+//                    countdown_text.setText(" " +timerTime); // 현재 시간을 표시.
+//                    Log.d("test" , "msg.what:1 time = " + timerTime);
+//
+//                    fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음
+//
+//                    break;
+//
+//                case 2: // 정지 후 타이머 초기화
+//                    removeMessages(0); // 타이머 메시지 삭제
+//                    timerTime = 10; // 타이머 초기화
+//                    countdown_text.setText(" " +timerTime);
+//
+//                    status = 0;
+//
+//                    // 타이머 다시 바로 재생
+//                    // 타이머 시작!
+//                    if(status == 0) // 정지 상태라면, 재 시작.
+//                    {
+//                        status = 1;
+//                        timer2.sendEmptyMessage(0);
+//                        //    button.setText("일시정지");
+//
+//                    }else if(status == 1){ // 타이머 동중이라면, 일시 정지 시키기
+//
+//                        status = 0;
+//                        // 1번 메시지를 던진다.
+//                        timer2.sendEmptyMessage(1);
+//                        // button.setText("시작");
+//                    }
+//
+////                    fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음 (너가 문제였어 이놈아)
+//
+//                    break;
+//
+//
+//                case 3: // 정지 후 타이머 초기화
+//                    removeMessages(0); // 타이머 메시지 삭제
+//                    timerTime = 10; // 타이머 초기화
+//                    countdown_text.setText(" " +timerTime);
+//
+//
+//                    status = 0;
+//
+//                    // 타이머 다시 바로 재생
+//                    // 타이머 시작!
+//                    if(status == 0) // 정지 상태라면, 재 시작.
+//                    {
+//                        status = 1;
+//                        timer2.sendEmptyMessage(0);
+//
+//                    }else if(status == 1){ // 타이머 동작 중이라면, 일시 정지 시키기
+//
+//                        status = 0;
+//                        // 1번 메시지를 던진다.
+//                        timer2.sendEmptyMessage(1);
+//                    }
+//
+//                    break;
+//                case 4: // 정지 후 타이머 초기화
+//                    removeMessages(0); // 타이머 메시지 삭제
+//                    timerTime = 6; // 타이머 초기화
+//                    countdown_text.setText(" " +timerTime);
+//
+//                    status = 0;
+//
+//                    // 타이머 다시 바로 재생
+//                    // 타이머 시작!
+//                    if(status == 0) // 정지 상태라면, 재 시작.
+//                    {
+//                        status = 1;
+//                        timer2.sendEmptyMessage(0);
+//
+//                    }else if(status == 1){ // 타이머 동중이라면, 일시 정지 시키기
+//
+//                        status = 0;
+//                        // 1번 메시지를 던진다.
+//                        timer2.sendEmptyMessage(1);
+//                    }
+//
+////                    fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음 (너가 문제였어 이놈아)
+//
+//                    break;
+//                case 5: // 정지 후 타이머 초기화
+//                    removeMessages(0); // 타이머 메시지 삭제
+//                    timerTime = 4; // 타이머 초기화
+//                    countdown_text.setText(" " +timerTime);
+//
+//                    status = 0;
+//
+//                    // 타이머 다시 바로 재생
+//                    // 타이머 시작!
+//                    if(status == 0) // 정지 상태라면, 재 시작.
+//                    {
+//                        status = 1;
+//                        timer2.sendEmptyMessage(0);
+//
+//                    }else if(status == 1){ // 타이머 동중이라면, 일시 정지 시키기
+//
+//                        status = 0;
+//                        // 1번 메시지를 던진다.
+//                        timer2.sendEmptyMessage(1);
+//                    }
+//
+////                    fff = 0; // 타이머까지 끝나야 다음 단계로 넘어갈 수 있음 (너가 문제였어 이놈아)
+//
+//                    break;
+//            }
+//        }
+//    }
+//
+//    /*
+//    타이머 추가 종료
+//     */
+//
+//
+//
+//
+//    public class Connect extends AsyncTask< String , String,Void > {
+//        public String output_message;
+//        public String input_message;
+//
+//        @Override
+//        public Void doInBackground(String... strings) {
+//            try {
+//                client = new Socket(SERVER_IP, 8080);
+//                dataOutput = new DataOutputStream(client.getOutputStream());
+//                dataInput = new DataInputStream(client.getInputStream());
+//                output_message = strings[0];
+//                dataOutput.writeUTF(output_message);
+//
+//            } catch (UnknownHostException e) {
+//                String str = e.getMessage().toString();
+//                Log.w("discnt", str + " 1");
+//            } catch (IOException e) {
+//                String str = e.getMessage().toString();
+//                Log.w("discnt", str + " 2");
+//            }
+//            try {
+//                byte[] buf1 = new byte[BUF_SIZE];
+//                int read_Byte1 = dataInput.read(buf1);
+//                base_weight = new String(buf1, 0, read_Byte1);
+//            }catch (IOException e){
+//                e.printStackTrace();
+//            }
+//
+//            while (true) {
+//                try {
+//                    byte[] buf = new byte[BUF_SIZE];
+//                    int read_Byte = dataInput.read(buf);
+//                    input_message = new String(buf, 0, read_Byte);
+//                    if (!input_message.equals(STOP_MSG)) {
+//                        publishProgress(input_message);
+//                    } else {
+//                        break;
+//                    }
+//                    Thread.sleep(2);
+//                } catch (IOException | InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        public void onProgressUpdate(String... params) {
+//
+//            step2_weight.setText(""); // Clear the chat box
+//            float now_weight = Float.parseFloat(params[0]);
+//            float weight;
+//            total_weight = now_weight - Float.parseFloat(base_weight);
+//            weight = now_weight - Float.parseFloat(base_weight) - new_weight;
+////            step2_weight.setText("현재 단계 무게: " + Float.toString(weight) + "\ntotal_weight: " + Float.toString(total_weight));
+//            step2_weight.setText(String.format("%.2f", weight) + " g");
+//
+//            if (step2_flag == 1 && total_weight > 20 && total_weight < 35) {
+//                Log.d("test", "Step2 Start!!");
+//
+//                new Handler().postDelayed(new Runnable()
+//                {
+//                    @Override
+//                    public void run()
+//                    {
+//                        weight_1 = total_weight;
+//                    }
+//                }, 2000);// 2초 정도 딜레이를 준 후 시작
+//
+//                new_weight += 20;
+//                timer_flag = 1;
+//                step2_flag = 0;
+//                step2_textview.setText("Step 2 뜸들이기");
+//                step_coffee.setText("20");
+//                step_water.setText("15");
+//
+//
+//                // just added
+//                step_coffee.setVisibility(View.INVISIBLE);
+//                countdown_text.setVisibility(View.VISIBLE);
+//                step2_info.setText("물 15g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다." +
+//                        "이 작업은 가루 전체에 물이 고르게 퍼지며 추출이 원활하게 합니다. " +
+//                        "또한 커피에 함유된 탄산가스와 공기를 빼주는 역할도 합니다.");
+//                step2_info2.setText("아래에 표시된 물의 양이 15g이 되면 타이머가 시작됩니다. 40초가 지나면 다음 단계로 넘어갑니다. ");
+//                countdown_text.setText(" 15");
+//                Log.d("-----", "Step2 : " + total_weight);
+//            }
+//
+//            if (step2_flag == 0 && total_weight >= 35) {
+//                Log.d("-----", "Step2: Over weight: " + total_weight);
+//
+//                toastMessage.show();    // 토스트 메시지
+//                ringtone.start();
+//                timer2.sendEmptyMessage(0);
+//                timer_flag = 0;
+//                step2_flag = 1;
+//            }
+//
+//            if (step3_flag == 1 && total_weight > 35 && total_weight < 185 && timer_flag==0 && fff==0) {
+//                Log.d("test", "Step3 Start!!");
+//                fff = 1;
+//                new_weight += 15;
+//                timer_flag = 1;
+//                step3_flag = 0;
+//                step2_textview.setText("Step 3 첫 번째 추출");
+//                step_coffee.setText("0");
+//                step_water.setText("150");
+//                step2_info.setText("물 150g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+//                step2_info2.setText("아래에 표시된 물의 양이 150g이 되면 타이머가 시작됩니다. 시간이 다 되면 다음 단계로 넘어갑니다. ");
+//                countdown_text.setText(" 10");
+//                Log.d("-----", "Step3 : " + total_weight);
+//            }
+//
+//            if (step3_flag == 0 && total_weight >= 185){
+//                Log.d("-----", "Step3: Over weight: " + total_weight);
+//                toastMessage.show();    // 토스트 메시지
+//                ringtone.start();
+//                timer2.sendEmptyMessage(2);
+//                timer_flag = 0;
+//                step3_flag = 1;
+//            }
+//
+//            if (step4_flag == 1 && total_weight > 185 && total_weight < 285 && timer_flag==0 && fff==0) {
+//                Log.d("test", "Step4 Start!!");
+//                fff = 1;
+//                new_weight += 150;
+//                timer_flag = 1;
+//                step4_flag = 0;
+//                step2_textview.setText("Step 4 두 번째 추출");
+//                step_coffee.setText("0");
+//                step_water.setText("100");
+//                step2_info.setText("물 100g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+//                step2_info2.setText("아래에 표시된 물의 양이 100g이 되면 다음 단계로 넘어갑니다. ");
+//                countdown_text.setText(" 6");
+//                Log.d("-----", "Step4 : " + total_weight);
+//            }
+//
+//            if (step4_flag == 0 && total_weight >= 285){
+//                Log.d("-----", "Step4: Over weight: " + total_weight);
+//                toastMessage.show();    // 토스트 메시지
+//                ringtone.start();
+//                timer2.sendEmptyMessage(4);
+//                timer_flag = 0;
+//                step4_flag = 1;
+//            }
+//
+//
+//            if (step5_flag == 1 && total_weight >= 285 && total_weight < 340 && timer_flag==0 && fff==0) {
+//                Log.d("test", "Step5 Start!!");
+//                fff = 1;
+//                new_weight += 100;
+//                timer_flag = 1;
+//                step5_flag = 0;
+//                step2_textview.setText("Step 5 마지막 추출");
+//                step_coffee.setText("0");
+//                step_water.setText("55");
+//                step2_info.setText("물 55g를 가운데부터 나선형으로 가장자리까지 천천히 부어줍니다.");
+//                step2_info2.setText("아래에 표시된 물의 양이 55g이 되면 드립 과정이 마무리됩니다. ");
+//                countdown_text.setText(" 4");
+//                Log.d("-----", "Step5 : " + total_weight);
+//            }
+//
+//            if (step5_flag == 0 && total_weight >= 340){
+//                Log.d("-----", "Step5: Over weight" + total_weight);
+//                toastMessage.show();    // 토스트 메시지
+//                ringtone.start();
+//                timer2.sendEmptyMessage(5);
+//                timer_flag = 0;
+//                step5_flag = 1;
+//            }
+//
+//            else if (step6_flag == 1 && total_weight >= 340 && timer_flag==0 && fff==0) {
+//                end = System.currentTimeMillis();
+//                total_time = (end - start)/1000;
+//                btn.setVisibility(View.VISIBLE);
+//                btn.setEnabled(true);
+//                step2_weight.setVisibility(View.INVISIBLE);
+//                step6_flag = 0;
+//                countdown_text.setText(" 0");
+//                step_water.setText("0");
+//                step2_textview.setText("드립 완료! 총 소요시간: " + Double.toString(total_time));
+//                step2_info.setText("핸드 드립 커피가 완성되었습니다! weight_1 = " + Float.toString(weight_1) + " weight_3 = "+Float.toString(weight_2)+ " weight_2 = "+Float.toString(weight_3)+ " weight_4 = "+Float.toString(weight_4)+ " weight_5 = "+Float.toString(weight_5));
+//                step2_info2.setText("향긋한 커피를 마시며 저희가 분석한 결과를 확인해보세요.");
+//            }
+//        }
+//    }
+//}
+//
