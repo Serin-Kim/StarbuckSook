@@ -12,7 +12,7 @@
         android:id="@+id/report_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/font_medium"
@@ -26,8 +26,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     <TextView
         android:id="@+id/report_countdown_text"
         android:layout_width="160dp"
@@ -35,6 +33,7 @@
         android:paddingLeft="20dp"
         android:paddingTop="5dp"
         android:paddingBottom="10dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_white"
         android:drawableLeft="@drawable/ingredient_timer2"
@@ -145,7 +144,7 @@
 
         <TextView
             android:id="@+id/report_score_content"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="5dp"
@@ -168,12 +167,13 @@
 
         <TextView
             android:id="@+id/report_score_content2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:text=" "
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="22dp"
+            android:text="결과 사진 찍기"
+            android:fontFamily="@font/cafe24surroundair"
             android:textColor="@color/stepTitle"
-            android:textSize="20sp"
+            android:textSize="15sp"
             app:layout_constraintLeft_toRightOf="@+id/line"
             app:layout_constraintTop_toBottomOf="@+id/report_score_title"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -185,12 +185,12 @@
 
 
     <Button
-        android:id="@+id/report_btn"
+        android:id="@+id/camera_btn"
         android:layout_width="200dip"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/green"
-        android:text="결과 공유하기"
+        android:text="결과 사진 찍기"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/font_medium"
         app:layout_constraintEnd_toEndOf="parent"
@@ -200,6 +200,219 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/background"-->
+<!--    tools:context=".ReportActivity">-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/report_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="44dp"-->
+<!--        android:fontFamily="@font/font_medium"-->
+<!--        android:textColor="@color/stepTitle"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="최종 결과"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.068"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/report_countdown_text"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:drawableLeft="@drawable/ingredient_timer2"-->
+<!--        android:drawablePadding="20dp"-->
+<!--        android:elevation="5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:text="200"-->
+<!--        android:textSize="30sp"-->
+<!--        android:gravity="left"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.131"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/report_textview" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/report_step_water"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:textSize="30sp"-->
+<!--        android:text="190"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/report_textview"-->
+<!--        app:layout_constraintLeft_toRightOf="@+id/report_countdown_text"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:drawableLeft="@drawable/ingredient_water"-->
+<!--        android:drawablePadding="25dp"-->
+<!--        />-->
+
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/barchart_box"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/report_countdown_text"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/barchart_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:text="단계별로 확인하기"-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <com.github.mikephil.charting.charts.HorizontalBarChart-->
+<!--            android:id="@+id/barchart"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="180dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.457"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/barchart_title" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/report_score"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/barchart_box"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/report_score_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text="레시피 달성률"-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/report_score_content"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="40dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="75 %"-->
+<!--            android:textColor="@color/green"-->
+<!--            android:textSize="40sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/report_score_title"-->
+<!--            tools:ignore="SpeakableTextPresentCheck" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/line"-->
+<!--            android:layout_width="2dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:background="@color/background"-->
+<!--            android:layout_marginLeft="19dp"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/report_score_content"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/report_score_content2"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="32dp"-->
+<!--            android:text=" "-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="20sp"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/line"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/report_score_title"-->
+<!--            tools:ignore="SpeakableTextPresentCheck" />-->
+
+
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/camera_btn"-->
+<!--        android:layout_width="200dip"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:text="결과 사진 찍기"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:fontFamily="@font/font_medium"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/report_score"/>-->
+
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
 
 
 

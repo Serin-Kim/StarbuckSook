@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.starbucksook" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.starbucksook">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -39,6 +41,33 @@
         <activity android:name=".Step1Activity" />
         <activity android:name=".Step2Activity" />
         <activity android:name=".ReportActivity" />
+
+
+        <provider
+            android:authorities="com.example.starbucksook"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            tools:replace="android:value"/>
+
+        <provider
+            android:authorities="com.facebook.app.FacebookContentProvider488674712831118"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
+
+
+
     </application>
 
 </manifest>

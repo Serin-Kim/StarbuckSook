@@ -1,32 +1,6 @@
 <resources>
     <string name="app_name">StarbuckSook</string>
-
-
-<!--    <string-array name="menu_name">-->
-<!--        <item>Hand Drip</item>-->
-<!--        <item>Caramel Macchiato</item>-->
-<!--        <item>Vanilla Latte</item>-->
-<!--    </string-array>-->
-
-<!--    <string-array name="menu_description">-->
-<!--        <item>This is random description</item>-->
-<!--        <item>This is random description</item>-->
-<!--        <item>This is random description</item>-->
-<!--    </string-array>-->
-    <string-array name="animal_name">
-        <item>Brewed Coffee</item>
-        <item>Caramel Macchiato</item>
-        <item>Vanilla Latte</item>
-        <item>Americano</item>
-        <item>Espresso</item>
-        <item>Lemon Ade</item>
-        <item>Dog</item>
-        <item>Eagle</item>
-        <item>Elephant</item>
-        <item>Fish</item>
-        <item>Hunter</item>
-        <item>Lion</item>
-    </string-array>
+    <string name="facebook_app_id">488674712831118</string>
 
     <string-array name="description">
         <item>준비물: 드립 서버, 드리퍼, 드립포트, 여과지, 물, 원두\n진행단계: 세팅하기-린싱-원두담기-뜸들이기-푸어링</item>

@@ -10,12 +10,12 @@
 
     <TextView
         android:id="@+id/step2_textview"
+        android:fontFamily="@font/font_medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="44dp"
-        android:fontFamily="@font/font_medium"
         android:textColor="@color/stepTitle"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -26,13 +26,13 @@
 
 
     <TextView
-        android:layout_marginLeft="80dp"
         android:id="@+id/step_coffee"
         android:layout_width="160dp"
         android:layout_height="100dp"
         android:paddingLeft="20dp"
         android:paddingTop="5dp"
         android:paddingBottom="10dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_white"
         android:drawableLeft="@drawable/ingredient_coffee"
@@ -48,13 +48,13 @@
 
 
     <TextView
-        android:layout_marginLeft="80dp"
         android:id="@+id/countdown_text"
         android:layout_width="160dp"
         android:layout_height="100dp"
         android:paddingLeft="20dp"
         android:paddingTop="5dp"
         android:paddingBottom="10dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_white"
         android:drawableLeft="@drawable/ingredient_timer2"
@@ -100,7 +100,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step_water"
         android:background="@drawable/round_lightgreen"
-        android:elevation = "5dp"
+        android:elevation="5dp"
         android:layout_marginTop="15dp"
 
         >
@@ -112,6 +112,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:text="확인하기"
+            android:fontFamily="@font/cafe24surroundair"
             android:textColor="@color/stepTitle"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -127,6 +128,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:text=" "
+            android:fontFamily="@font/cafe24surroundair"
             android:textColor="@color/stepTitle"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -159,6 +161,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:text="다음으로"
+            android:fontFamily="@font/cafe24surroundair"
             android:textColor="@color/stepTitle"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -175,6 +178,7 @@
             android:layout_marginTop="15dp"
             android:text=" "
             android:textColor="@color/stepTitle"
+            android:fontFamily="@font/cafe24surroundair"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.061"
@@ -192,6 +196,7 @@
         android:text="waiting..."
         android:layout_marginTop="15dp"
         android:textColor="@color/stepTitle"
+        android:fontFamily="@font/cafe24surroundair"
         android:textSize="40sp"
         android:background="@drawable/round_weight_btn"
         android:gravity="center"
@@ -213,10 +218,234 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/step_check2"
-        android:fontFamily="@font/font_medium"/>
+        android:fontFamily="@font/cafe24surroundair"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/background"-->
+<!--    tools:context=".Step2Activity">-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginTop="44dp"-->
+<!--        android:fontFamily="@font/font_medium"-->
+<!--        android:textColor="@color/stepTitle"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.068"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/step_coffee"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:drawableLeft="@drawable/ingredient_coffee"-->
+<!--        android:drawablePadding="30dp"-->
+<!--        android:elevation="5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:text="20"-->
+<!--        android:textSize="30sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.131"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_textview" />-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/countdown_text"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:drawableLeft="@drawable/ingredient_timer2"-->
+<!--        android:drawablePadding="20dp"-->
+<!--        android:elevation="5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:text=""-->
+<!--        android:textSize="30sp"-->
+<!--        android:gravity="left"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.131"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_textview" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/step_water"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:textSize="30sp"-->
+<!--        android:text="0"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step2_textview"-->
+<!--        app:layout_constraintLeft_toRightOf="@+id/step_coffee"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:fontFamily="@font/font_light"-->
+<!--        android:drawableLeft="@drawable/ingredient_water"-->
+<!--        android:drawablePadding="25dp"-->
+<!--        />-->
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/step_check"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step_water"-->
+<!--        android:background="@drawable/round_lightgreen"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:layout_marginTop="15dp"-->
+
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/step2_check_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text="확인하기"-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/step2_check_content"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text=" "-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="15sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/step2_check_title"-->
+<!--            android:paddingBottom="15dp"-->
+<!--            />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/step_check2"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step_check"-->
+<!--        android:background="@drawable/round_white"-->
+<!--        android:elevation = "5dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/step2_check_title2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text="다음으로"-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/step2_check_content2"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:text=" "-->
+<!--            android:textColor="@color/stepTitle"-->
+<!--            android:textSize="15sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.061"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/step2_check_title2" />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/step2_weight_content"-->
+<!--        android:layout_width="335dp"-->
+<!--        android:layout_height="120dp"-->
+<!--        android:text="waiting..."-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:textColor="@color/stepTitle"-->
+<!--        android:textSize="40sp"-->
+<!--        android:background="@drawable/round_weight_btn"-->
+<!--        android:gravity="center"-->
+<!--        android:elevation = "5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step_check2"/>-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/step2_btn"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="180dip"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:backgroundTint="@color/green"-->
+<!--        android:text="결과 확인"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/step_check2"-->
+<!--        android:fontFamily="@font/font_medium"/>-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
 
