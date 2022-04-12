@@ -53,8 +53,6 @@ public class InfoActivity extends AppCompatActivity {
         } else{
             Toast.makeText(this,"No data", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     private void setData() {

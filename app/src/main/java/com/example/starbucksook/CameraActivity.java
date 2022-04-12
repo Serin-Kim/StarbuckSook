@@ -60,7 +60,6 @@ public class CameraActivity extends AppCompatActivity {
         // 비트맵 변환
         Bitmap bitmap = BitmapFactory.decodeFile(imageFilePath);
         ExifInterface exif = null;
-
         try {
             exif = new ExifInterface(imageFilePath);
         } catch (IOException e) {

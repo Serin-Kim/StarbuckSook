@@ -19,25 +19,9 @@ public class MenuActivity extends AppCompatActivity {
 
         ConstraintLayout layout;
 
-//        RecyclerView recyclerView;
-
-
-//        String s1[], s2[];
-//        int images[] = {R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3, R.drawable.coffee1, R.drawable.coffee2, R.drawable.coffee3};
-
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_menu);
-
-//          파이어베이스에서 로그인한 사용자 가져오기
-//            userName = findViewById(R.id.menu_userId);
-//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//            if (user != null) {
-//                // Name, email address, and profile photo Url
-//                String name = user.getDisplayName();
-//
-//                userName.setText(name + "님, 안녕하세요!");
-//            }
 
             layout = findViewById(R.id.menuBox);
             layout.setOnClickListener(new View.OnClickListener() {
@@ -49,19 +33,5 @@ public class MenuActivity extends AppCompatActivity {
 
                 }
             });
-
-
-//            recyclerView
-//            recyclerView = findViewById(R.id.recyclerView);
-//
-//            s1 = getResources().getStringArray(R.array.animal_name);
-//            s2 = getResources().getStringArray(R.array.description);
-//
-//            MyAdapter myAdapter = new MyAdapter(this, s1, s2, images);
-//            recyclerView.setAdapter(myAdapter);
-//            recyclerView.setLayoutManager(new LinearLayoutManager(this));
         }
-
-
-
 }

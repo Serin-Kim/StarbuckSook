@@ -12,7 +12,6 @@ public class MediaScanner {
     private                 Context                                             mContext;
     private static volatile MediaScanner                                        mMediaInstance = null;
     private                 MediaScannerConnection                              mMediaScanner;
-    //private                 MediaScannerConnection.MediaScannerConnectionClient mMediaScannerClient;
 
     private String mFilePath;
 
@@ -41,7 +40,6 @@ public class MediaScanner {
         mediaScanClient = new MediaScannerConnection.MediaScannerConnectionClient(){
             @Override public void onMediaScannerConnected() {
                 mMediaScanner.scanFile(mFilePath, null);
-//                mFilePath = path;
             }
 
             @Override public void onScanCompleted(String path, Uri uri) {
@@ -62,6 +60,5 @@ public class MediaScanner {
         if( !mMediaScanner.isConnected() )
             mMediaScanner.connect();
 
-        //mMediaScanner.scanFile( path,null );
     }
 }
